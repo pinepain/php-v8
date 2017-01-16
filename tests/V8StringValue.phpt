@@ -13,7 +13,6 @@ $v8_helper = new PhpV8Helpers($helper);
 
 // Tests:
 
-
 $isolate = new V8\Isolate();
 
 $default = new V8\StringValue($isolate);
@@ -87,7 +86,6 @@ foreach (['Hello, world!', 'Привет, мир!', 'こんにちは世界'] as 
   $helper->method_export($value, 'ContainsOnlyOneByte');
 
   $helper->function_export('strlen', [$value->Value()]);
-  $helper->function_export('mb_strlen', [$value->Value()]);
   $helper->space();
 }
 
@@ -207,7 +205,6 @@ V8\StringValue->Utf8Length(): int(13)
 V8\StringValue->IsOneByte(): bool(true)
 V8\StringValue->ContainsOnlyOneByte(): bool(true)
 strlen(): 13
-mb_strlen(): 13
 
 
 V8\StringValue->Value(): string(21) "Привет, мир!"
@@ -216,7 +213,6 @@ V8\StringValue->Utf8Length(): int(21)
 V8\StringValue->IsOneByte(): bool(false)
 V8\StringValue->ContainsOnlyOneByte(): bool(false)
 strlen(): 21
-mb_strlen(): 12
 
 
 V8\StringValue->Value(): string(21) "こんにちは世界"
@@ -225,4 +221,3 @@ V8\StringValue->Utf8Length(): int(21)
 V8\StringValue->IsOneByte(): bool(false)
 V8\StringValue->ContainsOnlyOneByte(): bool(false)
 strlen(): 21
-mb_strlen(): 7
