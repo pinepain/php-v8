@@ -54,7 +54,7 @@ $helper->space();
 
 
 $helper->header('Test negative value in constructor');
-$value = new V8\IntegerValue($isolate, -123.456);
+$value = new V8\IntegerValue($isolate, -123);
 $helper->method_export($value, 'Value');
 $helper->method_export($value, 'BooleanValue', [$context]);
 $helper->method_export($value, 'NumberValue', [$context]);
