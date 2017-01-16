@@ -24,6 +24,8 @@ before_install:
   - sudo add-apt-repository ppa:pinepain/libv8-${V8} -y
   - sudo apt-get update -q
   - sudo apt-get install -y libv8-${V8}-dev
+  - php -i
+  - php-config || true
 
 before_script:
   - echo 'variables_order = "EGPCS"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
